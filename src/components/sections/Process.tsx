@@ -1,8 +1,5 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const experiences = [
   { 
@@ -59,7 +56,7 @@ export default function Process() {
             trigger: containerRef.current,
             start: 'top 50%',
             end: 'bottom 80%',
-            scrub: 1,
+            scrub: true,
           }
         }
       );
@@ -84,7 +81,7 @@ export default function Process() {
                 <div className="absolute w-5 h-5 rounded-full bg-background border-[3px] border-white/30 -left-[49.5px] md:-left-[89.5px] top-10 group-hover:border-glow-cyan group-hover:shadow-[0_0_20px_#00f0ff] transition-all duration-300 z-10" />
                 
                 {/* Timeline Content Card */}
-                <div className="glass-card p-8 md:p-12 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] bg-background/80 hover:bg-background/90 border-white/5">
+                <div className="glass-card p-8 md:p-12 pop-hover glow-border bg-background/80 hover:bg-background/90 border-white/5">
                   <div className="text-sm font-black uppercase tracking-[0.2em] text-glow-cyan mb-4 opacity-80">
                     {exp.num}
                   </div>

@@ -4,22 +4,39 @@
 
 @layer base {
   body {
-    @apply bg-background text-white overscroll-none;
+    @apply bg-background text-white overscroll-none touch-pan-y antialiased;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-surface backdrop-blur-md border border-white/10;
+    @apply bg-surface/40 backdrop-blur-md border border-white/10;
   }
   
   .glass-card {
-    @apply bg-background/60 bg-gradient-to-br from-white/[0.08] to-white/[0.01] backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.6)];
+    @apply bg-background/40 bg-gradient-to-br from-white/[0.08] to-white/[0.01] backdrop-blur-lg border border-white/10 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] transition-[transform,opacity,box-shadow,border-color] duration-500 will-change-transform;
+    transform: translateZ(0);
+  }
+
+  .pop-hover {
+    @apply transition-[transform,box-shadow] duration-500 cubic-bezier-pop hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] will-change-transform;
+  }
+
+  .glow-border {
+    @apply transition-colors duration-300 hover:border-glow-cyan/50 hover:shadow-[0_0_20px_rgba(0,240,255,0.2)] will-change-[border-color,box-shadow];
   }
 
   .text-glow {
     text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
   }
+
+  .text-glow-purple {
+    text-shadow: 0 0 20px rgba(176, 38, 255, 0.4);
+  }
+}
+
+.cubic-bezier-pop {
+  transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Custom Scrollbar hidden for smooth scroll experience */

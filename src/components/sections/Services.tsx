@@ -47,17 +47,17 @@ export default function Services() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo('.service-card',
-        { opacity: 0, scale: 0.8, y: 80 },
+        { opacity: 0, scale: 0.85, y: 50 },
         {
           opacity: 1,
           scale: 1,
           y: 0,
-          stagger: 0.15,
-          duration: 1.2,
-          ease: 'back.out(1.7)',
+          stagger: 0.1,
+          duration: 1,
+          ease: 'back.out(1.2)',
           scrollTrigger: {
             trigger: containerRef.current,
-            start: 'top 60%',
+            start: 'top 75%',
           }
         }
       );
@@ -77,12 +77,12 @@ export default function Services() {
           return (
             <div 
               key={idx}
-              className="service-card group glass-card p-10 flex flex-col items-start gap-6 transition-all duration-500 hover:-translate-y-4 hover:bg-black/40"
+              className="service-card group glass-card p-6 md:p-10 flex flex-col items-start gap-6 pop-hover glow-border"
             >
-              <div className={`p-4 rounded-xl glass transition-all duration-500 ${service.color}`}>
+              <div className={`p-4 rounded-xl glass transition-all duration-500 group-hover:scale-110 ${service.color}`}>
                 <Icon size={32} className="opacity-80 transition-opacity group-hover:opacity-100" />
               </div>
-              <h3 className="text-2xl font-semibold tracking-wide">{service.title}</h3>
+              <h3 className="text-2xl font-semibold tracking-wide group-hover:text-glow-cyan transition-colors duration-300">{service.title}</h3>
               <p className="text-white/70 text-lg leading-relaxed font-light">
                 {service.desc}
               </p>

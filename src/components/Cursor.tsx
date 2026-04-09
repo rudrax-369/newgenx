@@ -6,6 +6,9 @@ export default function Cursor() {
   const followerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouch) return;
+
     const ctx = gsap.context(() => {
       window.addEventListener('mousemove', (e) => {
         gsap.to(cursorRef.current, {

@@ -1,9 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TechGrid, AbstractNodes } from '../ui/VectorHUD';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,7 +39,7 @@ export default function About() {
         <h2 className="about-item text-4xl md:text-6xl font-bold mb-12 text-center text-glow">
           About Me
         </h2>
-        <div className="about-item glass-card p-10 md:p-14 mb-10 text-center">
+        <div className="about-item glass-card p-10 md:p-14 mb-10 text-center glow-border">
           <p className="text-2xl md:text-3xl font-light text-white/90">
             I build systems that <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan to-glow-purple">automate, scale, and generate revenue,</span> whilst providing comprehensive recruitment placement for both <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-glow-purple to-glow-cyan">Tech and Non-Tech roles.</span>
           </p>
@@ -57,7 +54,7 @@ export default function About() {
             "🚀 Develop scalable web & mobile applications",
             "🎓 Paid mentorship programs to train candidates for targeted roles"
           ].map((item, idx) => (
-            <div key={idx} className="about-item glass-card px-6 py-5 flex items-center">
+            <div key={idx} className="about-item glass-card px-6 py-5 flex items-center pop-hover glow-border">
               <p className="text-white/80 text-lg md:text-xl font-light">{item}</p>
             </div>
           ))}
