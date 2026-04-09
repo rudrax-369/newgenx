@@ -59,7 +59,7 @@ export default function About() {
             "🎓 Paid mentorship programs to train candidates for targeted roles"
           ].map((item, idx) => (
             <div key={idx} className="about-item bg-white/[0.03] border border-white/5 px-6 py-6 flex items-center pop-hover glow-border rounded-[1.5rem] transition-all duration-300">
-              <p className="text-white/80 text-lg md:text-xl font-light">{item}</p>
+              <p className="text-white text-lg md:text-xl font-light">{item}</p>
             </div>
           ))}
         </div>

@@ -37,7 +37,7 @@ export default function Recruitment() {
             <h2 className="text-5xl md:text-8xl font-black mb-6 text-glow tracking-tighter shadow-glow-cyan">
               We're Hiring.
             </h2>
-            <p className="text-lg md:text-3xl text-white/70 font-light max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-3xl text-white font-light max-w-4xl mx-auto leading-relaxed">
               Recruitment & Profile Training perfectly tailored to your ambitions.
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function Recruitment() {
                 <div className="inline-block px-4 py-2 md:px-6 md:py-3 border border-white/20 bg-white/5 rounded-xl text-xl md:text-3xl font-black text-white tracking-widest mb-6 md:mb-8">
                   FREE
                 </div>
-                <p className="text-base md:text-xl text-white/70 leading-relaxed font-light">
+                <p className="text-base md:text-xl text-white leading-relaxed font-light">
                   Apply for any of our available roles. If your existing skills and portfolio match our engineering standards, you proceed directly to our placement pipeline.
                 </p>
               </div>
@@ -70,7 +70,7 @@ export default function Recruitment() {
               <div className="relative z-10 w-full">
                 <h3 className="text-2xl md:text-4xl font-black tracking-tight mb-4 md:mb-6 text-glow-solar">Priority Training</h3>
                 <div className="flex w-full sm:inline-flex items-baseline justify-center sm:justify-start px-6 py-3 border border-glow-solar/40 bg-glow-solar/10 rounded-xl text-xl md:text-3xl font-black text-glow-solar tracking-widest mb-6 shadow-[0_0_40px_rgba(255,69,0,0.3)]">
-                  ₹15,000 <span className="text-xs md:text-base text-white/60 font-medium ml-2 uppercase tracking-wide">/ Total</span>
+                  ₹15,000 <span className="text-xs md:text-base text-white/90 font-medium ml-2 uppercase tracking-wide">/ Total</span>
                 </div>
                 <p className="text-base md:text-xl text-high-contrast leading-relaxed mb-8">
                   Aiming for a <span className="text-glow-solar font-black">specific profile</span>? We will personally train you on the required skills specifically tailored to <span className="text-glow-cyan font-black">guarantee</span> you clear the position. 
@@ -82,14 +82,14 @@ export default function Recruitment() {
                   
                   <div className="flex items-start gap-4">
                     <div className="mt-1.5 w-2 h-2 rounded-full bg-glow-cyan shadow-[0_0_10px_#00f0ff] shrink-0"></div>
-                    <p className="text-white/80 font-light leading-relaxed text-base md:text-lg">
+                    <p className="text-white font-light leading-relaxed text-base md:text-lg">
                       <strong className="text-white tracking-wide font-black">Standard:</strong> ₹15,000 paid upfront once training begins.
                     </p>
                   </div>
                   
                   <div className="flex items-start gap-4">
                     <div className="mt-1.5 w-2 h-2 rounded-full bg-glow-gold shadow-[0_0_10px_#ffcc00] shrink-0"></div>
-                    <p className="text-white/80 font-light leading-relaxed text-base md:text-lg">
+                    <p className="text-white font-light leading-relaxed text-base md:text-lg">
                       <strong className="text-white tracking-wide font-black">Split Approach:</strong> 
                       ₹7,500 upfront after offer letter, and the remaining 50% paid only after your first salary!
                     </p>

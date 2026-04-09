@@ -28,7 +28,7 @@ export default function Contact() {
                 <MessageSquare size={28} />
               </div>
               <div>
-                <span className="block text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Direct Chat</span>
+                <span className="block text-[10px] uppercase tracking-[0.3em] text-white mb-1">Direct Chat</span>
                 <span className="text-xl font-bold tracking-tight">WhatsApp</span>
               </div>
             </div>
@@ -46,7 +46,7 @@ export default function Contact() {
                 <Linkedin size={28} />
               </div>
               <div>
-                <span className="block text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Professional</span>
+                <span className="block text-[10px] uppercase tracking-[0.3em] text-white mb-1">Professional</span>
                 <span className="text-xl font-bold tracking-tight">LinkedIn</span>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Contact() {
                 <Instagram size={28} />
               </div>
               <div>
-                <span className="block text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Visual Log</span>
+                <span className="block text-[10px] uppercase tracking-[0.3em] text-white mb-1">Visual Log</span>
                 <span className="text-xl font-bold tracking-tight">Instagram</span>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function Contact() {
         </div>
       </div>
       
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 text-white/30 text-[10px] md:text-xs tracking-[0.2em] uppercase whitespace-nowrap text-center w-full px-6">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 text-white text-[10px] md:text-xs tracking-[0.2em] uppercase whitespace-nowrap text-center w-full px-6">
         © 2026 Rudrax Chhonkar. <br className="md:hidden"/> Built with Strategy + Code.
       </div>
     </section>

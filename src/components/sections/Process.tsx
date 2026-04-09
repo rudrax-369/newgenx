@@ -88,14 +88,14 @@ export default function Process() {
                   <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
-                    <div className="text-xs font-black uppercase tracking-[0.3em] text-glow-cyan mb-6 opacity-80 flex items-center gap-4">
+                    <div className="text-xs font-black uppercase tracking-[0.3em] text-glow-cyan mb-6 opacity-100 flex items-center gap-4">
                       <span className="h-px w-12 bg-glow-cyan/50" />
                       {exp.num}
                     </div>
                     <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-6 text-white group-hover:text-glow-solar transition-colors duration-300 leading-none">
                       {exp.title}
                     </h3>
-                    <p className="text-white/70 text-lg md:text-xl font-light leading-relaxed max-w-3xl">
+                    <p className="text-white text-lg md:text-xl font-light leading-relaxed max-w-3xl">
                       {exp.desc}
                     </p>
                   </div>

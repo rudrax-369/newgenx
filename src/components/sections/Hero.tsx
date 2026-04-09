@@ -40,7 +40,7 @@ export default function Hero() {
         </p>
         <div className="flex gap-6 relative z-10">
           <div className="h-px w-24 bg-gradient-to-r from-glow-cyan to-transparent self-center opacity-50" />
-          <span className="text-[10px] uppercase tracking-[0.5em] text-white/40 font-bold">Available for Global Projects</span>
+          <span className="text-[10px] uppercase tracking-[0.5em] text-white font-bold">Available for Global Projects</span>
         </div>
       </div>
 

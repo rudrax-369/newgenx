@@ -87,7 +87,7 @@ export default function Services() {
                   <Icon size={32} className="opacity-80 transition-opacity group-hover:opacity-100" />
                 </div>
                 <h3 className="text-2xl font-semibold tracking-wide group-hover:text-glow-cyan transition-colors duration-300">{service.title}</h3>
-                <p className="text-white/70 text-lg leading-relaxed font-light">
+                <p className="text-white text-lg leading-relaxed font-light">
                   {service.desc}
                 </p>
               </div>

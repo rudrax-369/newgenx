@@ -51,7 +51,7 @@ export default function Navbar() {
               <a 
                 key={link.name}
                 href={link.href}
-                className="text-xs uppercase tracking-[0.2em] font-medium text-white/50 hover:text-glow-cyan transition-colors duration-300"
+                className="text-xs uppercase tracking-[0.2em] font-medium text-white hover:text-glow-cyan transition-colors duration-300"
               >
                 {link.name}
               </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* Mobile Toggle */}
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-white/70 hover:text-glow-cyan transition-colors"
+            className="md:hidden p-2 text-white hover:text-glow-cyan transition-colors touch-manipulation"
           >
             {isOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
@@ -87,7 +87,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-4xl font-black uppercase tracking-[0.2em] text-white/40 hover:scale-110 transition-all duration-300 ${accentClass}`}
+                className={`text-4xl font-black uppercase tracking-[0.2em] text-white hover:scale-110 transition-all duration-300 ${accentClass}`}
               >
                 {link.name}
               </a>

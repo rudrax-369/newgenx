@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { ReactLenis } from '@studio-freight/react-lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -16,15 +16,30 @@ import Contact from './components/sections/Contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Lenis options tuned for a premium, buttery-smooth scroll feel
+const LENIS_OPTIONS = {
+  lerp: 0.1,           // Smoothing factor — 0.1 = silky, 0.15 = snappier
+  smoothWheel: true,   // Enable smooth wheel scrolling
+  duration: 1.2,       // Deceleration duration
+  easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Expo ease-out
+};
+
 function App() {
   const [loading, setLoading] = useState(true);
+
+  // Detect touch device once — no re-render needed
+  const isTouch = useMemo(() =>
+    typeof window !== 'undefined' &&
+    ('ontouchstart' in window || navigator.maxTouchPoints > 0),
+  []);
 
   return (
     <>
       <LoadingScreen onComplete={() => setLoading(false)} />
       {!loading && (
         <>
-          <Cursor />
+          {/* Custom cursor is meaningless on touch devices */}
+          {!isTouch && <Cursor />}
           <Navbar />
         </>
       )}
@@ -36,7 +51,7 @@ function App() {
         </div>
 
         {/* Scrollable Content */}
-        <ReactLenis root>
+        <ReactLenis root options={LENIS_OPTIONS}>
           <main className="relative z-10 w-full overflow-hidden">
             <Hero />
             <div id="about"><About /></div>

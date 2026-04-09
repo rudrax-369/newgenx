@@ -21,8 +21,17 @@ export default function ParticleSystem({ count = 1000 }: { count?: number }) {
       pointsRef.current.rotation.x = state.clock.elapsedTime * 0.01;
       
       // Map mouse position to particle rotation slightly for interactive feel
-      pointsRef.current.rotation.x += state.pointer.y * 0.05;
-      pointsRef.current.rotation.y += state.pointer.x * 0.05;
+      // Using lerp prevents erratic fast spinning on mobile when pointer values stick
+      pointsRef.current.rotation.x = THREE.MathUtils.lerp(
+        pointsRef.current.rotation.x,
+        state.clock.elapsedTime * 0.01 + state.pointer.y * 0.2,
+        0.05
+      );
+      pointsRef.current.rotation.y = THREE.MathUtils.lerp(
+        pointsRef.current.rotation.y,
+        state.clock.elapsedTime * 0.02 + state.pointer.x * 0.2,
+        0.05
+      );
     }
   });
 

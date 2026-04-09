@@ -63,7 +63,7 @@ export default function Deliveries() {
           <h2 className="text-5xl md:text-8xl font-black mb-8 text-glow tracking-tighter leading-none">
             Proven Impact.
           </h2>
-          <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl leading-relaxed">
+          <p className="text-xl md:text-3xl text-white font-light max-w-3xl leading-relaxed">
             A selection of global platforms and high-performance systems engineering for industry-leading organizations.
           </p>
         </div>
@@ -93,13 +93,13 @@ export default function Deliveries() {
                 </div>
 
                 <div className="relative z-10">
-                  <span className={`text-[10px] uppercase tracking-[0.4em] font-black mb-4 block opacity-60 ${accentClass}`}>
+                  <span className={`text-[10px] uppercase tracking-[0.4em] font-black mb-4 block opacity-100 ${accentClass}`}>
                     {item.type}
                   </span>
                   <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-6 group-hover:text-white transition-colors duration-300 leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-white/60 text-lg md:text-xl leading-relaxed font-light">
+                  <p className="text-white text-lg md:text-xl leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>

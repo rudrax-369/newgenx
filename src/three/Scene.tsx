@@ -2,7 +2,6 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { Environment, Float, Preload, Sparkles, MeshDistortMaterial } from '@react-three/drei';
 import { Suspense, useRef } from 'react';
 import * as THREE from 'three';
-import gsap from 'gsap';
 import ParticleSystem from './ParticleSystem';
 
 function RedSun() {
@@ -20,37 +19,52 @@ function RedSun() {
       coreRef.current.rotation.y = -state.clock.elapsedTime * 0.03;
     }
     
-    // Subtle mouse parallax
+    // Smooth, performance-friendly mouse parallax (replaces GSAP in loop)
     if (groupRef.current) {
-      gsap.to(groupRef.current.position, {
-        x: state.pointer.x * 0.5,
-        y: state.pointer.y * 0.5,
-        duration: 2,
-        ease: 'power2.out'
-      });
+      groupRef.current.position.x = THREE.MathUtils.lerp(
+        groupRef.current.position.x,
+        state.pointer.x * 0.5,
+        0.1
+      );
+      groupRef.current.position.y = THREE.MathUtils.lerp(
+        groupRef.current.position.y,
+        state.pointer.y * 0.5,
+        0.1
+      );
     }
   });
 
   return (
     <group ref={groupRef} scale={isMobile ? 0.7 : 1.2}>
-      <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.5}>
-        {/* Core Sun - The "Boiling" Layer */}
+      {/* Reduced float intensity for performance */}
+      <Float speed={1} rotationIntensity={0.1} floatIntensity={0.2}>
+        {/* Core Sun */}
         <mesh ref={meshRef}>
-          <sphereGeometry args={[1, 32, 32]} />
-          <MeshDistortMaterial
-            color="#ff0000"
-            emissive="#ff4500"
-            emissiveIntensity={2}
-            distort={0.15}
-            speed={1}
-            roughness={0.4}
-            metalness={0.8}
-          />
+          <sphereGeometry args={[1, isMobile ? 16 : 32, isMobile ? 16 : 32]} />
+          {isMobile ? (
+            <meshStandardMaterial
+              color="#ff0000"
+              emissive="#ff4500"
+              emissiveIntensity={2}
+              roughness={0.4}
+              metalness={0.8}
+            />
+          ) : (
+            <MeshDistortMaterial
+              color="#ff0000"
+              emissive="#ff4500"
+              emissiveIntensity={2}
+              distort={0.15}
+              speed={1}
+              roughness={0.4}
+              metalness={0.8}
+            />
+          )}
         </mesh>
         
         {/* Chromosphere - Inner Dense Glow */}
         <mesh ref={coreRef} scale={1.02}>
-          <sphereGeometry args={[1, 32, 32]} />
+          <sphereGeometry args={[1, isMobile ? 16 : 32, isMobile ? 16 : 32]} />
           <meshStandardMaterial
             color="#ff8c00"
             transparent
@@ -59,23 +73,25 @@ function RedSun() {
           />
         </mesh>
         
-        {/* Corona / Outer Glow Layer */}
-        <mesh scale={1.25}>
-          <sphereGeometry args={[1, 32, 32]} />
-          <meshStandardMaterial
-            color="#ff4500"
-            transparent
-            opacity={0.1}
-            side={THREE.BackSide}
-            blending={THREE.AdditiveBlending}
-          />
-        </mesh>
+        {/* Corona / Outer Glow Layer - Disabled on Mobile for performance */}
+        {!isMobile && (
+          <mesh scale={1.25}>
+            <sphereGeometry args={[1, 32, 32]} />
+            <meshStandardMaterial
+              color="#ff4500"
+              transparent
+              opacity={0.1}
+              side={THREE.BackSide}
+              blending={THREE.AdditiveBlending}
+            />
+          </mesh>
+        )}
 
         {/* Solar Flares - High-efficiency particle flares */}
         <Sparkles 
-          count={isMobile ? 30 : 60} 
+          count={isMobile ? 20 : 60} 
           scale={2.5} 
-          size={isMobile ? 2 : 4} 
+          size={isMobile ? 3 : 4} 
           speed={0.3} 
           color="#ffcc00" 
           opacity={0.6}
@@ -86,11 +102,19 @@ function RedSun() {
 }
 
 export default function Scene() {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45 }}
-      dpr={[1, 1.5]}
-      gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
+      dpr={isMobile ? 1 : [1, 1.2]}  // Limit DPR on mobile
+      gl={{ 
+        antialias: false, 
+        alpha: true, 
+        powerPreference: 'high-performance',
+        stencil: false,
+        depth: false
+      }}
     >
       <Suspense fallback={null}>
         <ambientLight intensity={0.4} />
@@ -99,11 +123,10 @@ export default function Scene() {
         <directionalLight position={[-5, -5, -5]} intensity={1} color="#4b0000" />
         
         <RedSun />
-        <ParticleSystem count={typeof window !== 'undefined' && window.innerWidth < 768 ? 400 : 1200} />
-        
-        <Environment preset="night" />
-        <Preload all />
+        <ParticleSystem count={isMobile ? 150 : 1200} />
       </Suspense>
+      {!isMobile && <Environment preset="night" />}
+      <Preload all />
     </Canvas>
   );
 }
