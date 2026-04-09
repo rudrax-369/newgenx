@@ -40,8 +40,8 @@ export default function About() {
           About Me.
         </h2>
         <div className="about-item glass-card p-10 md:p-14 mb-10 text-center glow-border">
-          <p className="text-2xl md:text-4xl font-light text-white/90 leading-tight">
-            I build systems that <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-solar to-glow-cyan drop-shadow-[0_0_10px_rgba(255,69,0,0.3)]">automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-gold to-glow-cyan">Global Tech & Non-Tech talent.</span>
+          <p className="text-2xl md:text-5xl text-high-contrast leading-[1.1] tracking-tight">
+            I build systems that <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-solar to-glow-gold drop-shadow-[0_0_20px_rgba(255,69,0,0.4)]">automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan to-white drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">Global Tech & Non-Tech talent.</span>
           </p>
         </div>
         

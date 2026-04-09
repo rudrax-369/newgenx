@@ -6,11 +6,11 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto items-start flex flex-col">
         <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter text-glow-solar leading-none">
           Let's Scale <br />
-          <span className="text-glow underline decoration-glow-cyan/30 underline-offset-8">Together</span>.
+          <span className="text-glow underline decoration-glow-cyan/50 underline-offset-[12px]">Together</span>.
         </h2>
         
-        <p className="text-xl md:text-3xl text-white/60 font-light max-w-2xl mb-16 leading-relaxed">
-          Whether you're looking to build a <span className="text-white font-bold">new product</span>, optimize your <span className="text-white font-bold">growth funnel</span>, or scale your <span className="text-white font-bold">engineering team</span>—I'm ready to help you hit the next peak.
+        <p className="text-xl md:text-3xl text-high-contrast max-w-2xl mb-16 leading-relaxed">
+          Whether you're looking to build a <span className="text-glow-cyan font-black">new product</span>, optimize your <span className="text-glow-solar font-black">growth funnel</span>, or scale your <span className="text-glow-cyan font-black">engineering team</span>—I'm ready to help you hit the next peak.
         </p>
 
         <div className="flex flex-wrap gap-6 w-full">

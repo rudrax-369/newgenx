@@ -26,14 +26,14 @@ export default function Hero() {
       </div>
 
       <div className="hero-text z-10 flex flex-col items-start mt-20 md:mt-32 pointer-events-auto max-w-4xl glass-card p-8 md:p-20 relative text-left mx-4 md:mx-0">
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 transition-all duration-700 hover:tracking-tight">
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 transition-all duration-700 hover:tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
           <span className="text-glow block mb-2">Build. Develop.</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan via-white to-glow-solar drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan via-white to-glow-solar drop-shadow-[0_0_40px_rgba(255,69,0,0.4)]">
             Scale Fast.
           </span>
         </h1>
-        <p className="text-xl md:text-3xl text-white/80 font-light max-w-3xl leading-snug mb-10">
-          Founder of NewGenX. Engineering <span className="text-glow-solar font-bold">Growth Systems</span> & <span className="text-glow-cyan font-bold">Tech Products</span> for the global market.
+        <p className="text-xl md:text-3xl text-high-contrast max-w-3xl leading-snug mb-10">
+          Founder of NewGenX. Engineering <span className="text-glow-solar font-black">Growth Systems</span> & <span className="text-glow-cyan font-black">Tech Products</span> for the global market.
         </p>
         <div className="flex gap-6">
           <div className="h-px w-24 bg-gradient-to-r from-glow-cyan to-transparent self-center opacity-50" />

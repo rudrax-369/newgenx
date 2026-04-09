@@ -56,6 +56,12 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
+            <a 
+              href="#contact"
+              className="px-6 py-2.5 border border-glow-solar/30 rounded-full text-[10px] uppercase tracking-[0.2em] font-bold text-white hover:bg-glow-solar hover:border-glow-solar hover:text-background hover:shadow-[0_0_20px_rgba(255,69,0,0.4)] transition-all duration-500"
+            >
+              Get in touch
+            </a>
           </div>
 
           {/* Mobile Toggle */}

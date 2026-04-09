@@ -10,8 +10,8 @@
   }
 
   body {
-    @apply bg-background text-white overscroll-none touch-pan-y antialiased font-sans;
-    letter-spacing: -0.01em;
+    @apply bg-background text-white/90 overscroll-none touch-pan-y antialiased font-sans;
+    letter-spacing: -0.015em;
   }
 }
 
@@ -21,35 +21,39 @@
   }
   
   .glass-card {
-    @apply bg-background/40 bg-gradient-to-br from-white/[0.08] to-white/[0.01] backdrop-blur-lg border border-white/10 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.8)] transition-[transform,opacity,box-shadow,border-color] duration-500 will-change-transform relative overflow-hidden;
+    @apply bg-background/50 bg-gradient-to-br from-white/[0.12] to-white/[0.02] backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_8px_48px_0_rgba(0,0,0,0.9)] transition-[transform,opacity,box-shadow,border-color] duration-500 will-change-transform relative overflow-hidden;
     transform: translateZ(0);
   }
 
   .glass-card::before {
     content: '';
-    @apply absolute inset-0 opacity-0 transition-opacity duration-500 pointer-events-none;
-    background: radial-gradient(circle at top left, var(--glow-cyan), transparent 30%),
-                radial-gradient(circle at bottom right, var(--glow-solar), transparent 30%);
+    @apply absolute inset-0 opacity-0 transition-opacity duration-700 pointer-events-none;
+    background: radial-gradient(circle at top left, var(--glow-cyan), transparent 40%),
+                radial-gradient(circle at bottom right, var(--glow-solar), transparent 40%);
   }
 
   .glass-card:hover::before {
-    @apply opacity-20;
+    @apply opacity-30;
   }
 
   .pop-hover {
-    @apply transition-[transform,box-shadow] duration-500 cubic-bezier-pop hover:-translate-y-3 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] will-change-transform;
+    @apply transition-[transform,box-shadow] duration-500 cubic-bezier-pop hover:-translate-y-4 hover:scale-[1.03] hover:shadow-[0_30px_60px_rgba(0,0,0,0.5)] will-change-transform;
   }
 
   .glow-border {
-    @apply transition-colors duration-300 hover:border-glow-cyan/50 hover:shadow-[0_0_20px_rgba(0,240,255,0.1)] will-change-[border-color,box-shadow];
+    @apply transition-colors duration-300 hover:border-glow-cyan/60 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] will-change-[border-color,box-shadow];
   }
 
   .text-glow {
-    text-shadow: 0 0 30px rgba(0, 240, 255, 0.4), 0 0 60px rgba(255, 69, 0, 0.2);
+    text-shadow: 0 0 35px rgba(0, 240, 255, 0.6), 0 0 70px rgba(255, 69, 0, 0.3);
   }
 
   .text-glow-solar {
-    text-shadow: 0 0 20px rgba(255, 69, 0, 0.6);
+    text-shadow: 0 0 25px rgba(255, 69, 0, 0.8), 0 0 50px rgba(255, 204, 0, 0.4);
+  }
+
+  .text-high-contrast {
+    @apply text-white font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)];
   }
 }
 
