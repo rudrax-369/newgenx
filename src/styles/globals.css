@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-white overscroll-none;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-surface backdrop-blur-md border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-background/60 bg-gradient-to-br from-white/[0.08] to-white/[0.01] backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.6)];
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+  }
+}
+
+/* Custom Scrollbar hidden for smooth scroll experience */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

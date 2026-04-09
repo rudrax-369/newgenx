@@ -1,0 +1,105 @@
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const experiences = [
+  { 
+    num: '2023 - Present', 
+    title: 'Full Stack & Mobile App Architect', 
+    desc: 'Engineering scalable web and Flutter mobile applications with robust backend infrastructure. Delivering high-performance solutions optimized for user retention and business metrics.' 
+  },
+  { 
+    num: '2022 - 2023', 
+    title: 'Growth Engineer & Tech Strategist', 
+    desc: 'Designed and deployed automated B2B lead generation pipelines. Integrated scalable scraping and targeting systems that directly driven quantifiable customer acquisition and revenue.' 
+  },
+  { 
+    num: '2021 - 2022', 
+    title: 'Data & Automation Specialist', 
+    desc: 'Built interconnected automation architectures via n8n and Make.com. Designed comprehensive analytics dashboards to monitor KPIs, streamlining real-world business operations.' 
+  },
+  { 
+    num: 'Current Focus', 
+    title: 'Talent Placement & Mentorship', 
+    desc: 'Connecting enterprises with pre-vetted Tech and Non-Tech talent. Providing rigorous, specialized paid training programs for candidates targeting highly-competitive profile roles.' 
+  },
+];
+
+export default function Process() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray('.process-step');
+      
+      gsap.fromTo(items,
+        { opacity: 0, scale: 0.8, x: -80 },
+        {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          stagger: 0.2,
+          duration: 1.2,
+          ease: 'back.out(1.5)',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 70%',
+          }
+        }
+      );
+      
+      gsap.fromTo('.process-line',
+        { height: '0%' },
+        {
+          height: '100%',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 50%',
+            end: 'bottom 80%',
+            scrub: 1,
+          }
+        }
+      );
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={containerRef} className="relative w-full min-h-screen py-32 px-6 md:px-24 flex flex-col justify-center">
+      <div className="max-w-5xl mx-auto w-full relative">
+        <h2 className="text-4xl md:text-6xl font-bold mb-20 tracking-tight text-glow text-center md:text-left">
+          Projects & Work
+        </h2>
+        
+        <div className="relative pl-10 md:pl-20 border-l border-white/10 ml-2 md:ml-0">
+          <div className="process-line absolute top-0 left-0 w-[2px] bg-gradient-to-b from-glow-cyan to-glow-purple origin-top" />
+          
+          <div className="flex flex-col gap-12">
+            {experiences.map((exp, i) => (
+              <div key={i} className="process-step relative group cursor-default">
+                {/* Timeline Dot */}
+                <div className="absolute w-5 h-5 rounded-full bg-background border-[3px] border-white/30 -left-[49.5px] md:-left-[89.5px] top-10 group-hover:border-glow-cyan group-hover:shadow-[0_0_20px_#00f0ff] transition-all duration-300 z-10" />
+                
+                {/* Timeline Content Card */}
+                <div className="glass-card p-8 md:p-12 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(0,240,255,0.15)] bg-background/80 hover:bg-background/90 border-white/5">
+                  <div className="text-sm font-black uppercase tracking-[0.2em] text-glow-cyan mb-4 opacity-80">
+                    {exp.num}
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold tracking-wide mb-4 text-white group-hover:text-glow-purple transition-colors duration-300">
+                    {exp.title}
+                  </h3>
+                  <p className="text-white/80 text-xl font-light leading-relaxed max-w-3xl">
+                    {exp.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
