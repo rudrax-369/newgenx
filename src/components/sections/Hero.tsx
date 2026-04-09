@@ -31,7 +31,7 @@ export default function Hero() {
         
         <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 transition-all duration-700 hover:tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative z-10">
           <span className="text-glow block mb-2">Build. Develop.</span>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan via-white to-glow-solar drop-shadow-[0_0_40px_rgba(255,69,0,0.4)]">
+          <span className="font-black" style={{color: '#ffffff', textShadow: '0 0 30px rgba(0,240,255,0.5), 0 0 60px rgba(255,69,0,0.4)'}}>
             Scale Fast.
           </span>
         </h1>

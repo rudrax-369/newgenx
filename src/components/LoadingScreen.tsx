@@ -49,7 +49,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
 
   return (
     <div className="loading-screen fixed inset-0 z-[200] flex flex-col items-center justify-center bg-background text-white">
-      <div className="text-6xl md:text-8xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan to-glow-purple">
+      <div className="text-6xl md:text-8xl font-bold tracking-tighter text-white" style={{textShadow: '0 0 30px rgba(0,240,255,0.7), 0 0 60px rgba(0,240,255,0.3)'}}>
         {progress}%
       </div>
       
