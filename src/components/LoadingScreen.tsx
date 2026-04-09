@@ -60,7 +60,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
         />
       </div>
       
-      <div className="mt-8 text-xs md:text-sm uppercase tracking-[0.2em] text-white/50 min-h-[20px] font-mono text-center">
+      <div className="mt-8 text-xs md:text-sm uppercase tracking-[0.2em] text-white min-h-[20px] font-mono text-center">
         {FANCY_PHRASES[phraseIndex]}
       </div>
     </div>

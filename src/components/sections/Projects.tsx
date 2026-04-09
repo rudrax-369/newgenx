@@ -37,7 +37,7 @@ export default function Projects() {
   return (
     <section ref={containerRef} className="relative w-full lg:h-screen overflow-hidden lg:overflow-visible bg-background/50 backdrop-blur-sm py-20 lg:py-0">
       <div className="absolute top-12 left-6 md:left-24 z-20">
-        <h2 className="text-2xl md:text-3xl font-bold tracking-widest uppercase text-white/50">Featured Work</h2>
+        <h2 className="text-2xl md:text-3xl font-bold tracking-widest uppercase text-white">Featured Work</h2>
       </div>
       
       <div ref={scrollWrapperRef} className="h-full flex flex-col lg:flex-nowrap lg:flex-row items-center justify-center gap-12 lg:gap-0 lg:pt-20 px-6 md:px-24">
@@ -54,7 +54,7 @@ export default function Projects() {
                 <div className={`absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] ${bgGlow} via-background to-background scale-150 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-40 mix-blend-screen`} />
                 
                 <div className="absolute inset-0 p-12 flex flex-col justify-between z-10 translate-z-[50px]">
-                  <span className={`text-6xl font-black text-transparent bg-clip-text bg-white/20 transition-all duration-500 ${isEven ? 'group-hover:bg-glow-cyan/40' : 'group-hover:bg-glow-solar/40'}`}>
+                  <span className={`text-6xl font-black text-white transition-all duration-500 ${isEven ? 'group-hover:text-glow-cyan' : 'group-hover:text-glow-solar'}`}>
                     {proj.num}
                   </span>
                   

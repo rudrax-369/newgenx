@@ -32,7 +32,7 @@ export default function Contact() {
                 <span className="text-xl font-bold tracking-tight">WhatsApp</span>
               </div>
             </div>
-            <ArrowUpRight className="text-white/20 group-hover/link:text-glow-cyan transition-colors" />
+            <ArrowUpRight className="text-white group-hover/link:text-glow-cyan transition-colors" />
           </a>
 
           <a 
@@ -50,7 +50,7 @@ export default function Contact() {
                 <span className="text-xl font-bold tracking-tight">LinkedIn</span>
               </div>
             </div>
-            <ArrowUpRight className="text-white/20 group-hover/link:text-glow-solar transition-colors" />
+            <ArrowUpRight className="text-white group-hover/link:text-glow-solar transition-colors" />
           </a>
 
           <a 
@@ -60,7 +60,7 @@ export default function Contact() {
             className="flex-1 min-w-[280px] px-8 py-8 bg-white/[0.03] rounded-3xl pop-hover flex items-center justify-between group/link border border-white/5 hover:border-white/20"
           >
             <div className="flex items-center gap-6">
-              <div className="p-4 rounded-xl bg-white/5 text-white/60 group-hover/link:scale-110 group-hover/link:text-white transition-all">
+              <div className="p-4 rounded-xl bg-white/5 text-white group-hover/link:scale-110 transition-all">
                 <Instagram size={28} />
               </div>
               <div>
@@ -68,7 +68,7 @@ export default function Contact() {
                 <span className="text-xl font-bold tracking-tight">Instagram</span>
               </div>
             </div>
-            <ArrowUpRight className="text-white/20 group-hover/link:text-white transition-colors" />
+<ArrowUpRight className="text-white transition-colors" />
           </a>
         </div>
       </div>

@@ -84,7 +84,7 @@ export default function Services() {
                 className="service-card group bg-white/[0.03] border border-white/10 p-6 md:p-8 flex flex-col items-start gap-6 pop-hover glow-border rounded-3xl transition-all duration-300"
               >
                 <div className={`p-4 rounded-xl glass transition-all duration-500 group-hover:scale-110 ${service.color}`}>
-                  <Icon size={32} className="opacity-80 transition-opacity group-hover:opacity-100" />
+                  <Icon size={32} className="opacity-100" />
                 </div>
                 <h3 className="text-2xl font-semibold tracking-wide group-hover:text-glow-cyan transition-colors duration-300">{service.title}</h3>
                 <p className="text-white text-lg leading-relaxed font-light">

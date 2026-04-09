@@ -48,7 +48,7 @@ export default function Recruitment() {
             <div className="group bg-background/40 border border-white/10 rounded-[2rem] p-6 md:p-14 flex flex-col items-start gap-6 md:gap-8 pop-hover glow-border relative overflow-hidden backdrop-blur-md">
               <div className="absolute inset-0 bg-gradient-to-br from-glow-cyan/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative z-10 p-4 md:p-6 rounded-2xl glass transition-all duration-500 group-hover:text-glow-cyan bg-glow-cyan/5 shadow-inner">
-                <Briefcase size={32} className="md:w-14 md:h-14 opacity-90 group-hover:opacity-100" />
+                <Briefcase size={32} className="md:w-14 md:h-14 opacity-100" />
               </div>
               <div className="relative z-10 w-full">
                 <h3 className="text-2xl md:text-4xl font-black tracking-tight mb-4 md:mb-6 group-hover:text-glow-cyan transition-colors duration-300">Standard Application</h3>
@@ -65,12 +65,12 @@ export default function Recruitment() {
             <div className="group bg-background/40 border border-white/10 rounded-[2rem] p-6 md:p-14 flex flex-col items-start gap-6 md:gap-8 pop-hover hover:border-glow-solar/50 glow-border relative overflow-hidden backdrop-blur-md shadow-2xl">
               <div className="absolute inset-0 bg-gradient-to-br from-glow-solar/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               <div className="relative z-10 p-4 md:p-6 rounded-2xl glass transition-all duration-500 group-hover:text-glow-solar bg-glow-solar/5 shadow-inner">
-                <GraduationCap size={32} className="md:w-14 md:h-14 opacity-90 group-hover:opacity-100" />
+                <GraduationCap size={32} className="md:w-14 md:h-14 opacity-100" />
               </div>
               <div className="relative z-10 w-full">
                 <h3 className="text-2xl md:text-4xl font-black tracking-tight mb-4 md:mb-6 text-glow-solar">Priority Training</h3>
                 <div className="flex w-full sm:inline-flex items-baseline justify-center sm:justify-start px-6 py-3 border border-glow-solar/40 bg-glow-solar/10 rounded-xl text-xl md:text-3xl font-black text-glow-solar tracking-widest mb-6 shadow-[0_0_40px_rgba(255,69,0,0.3)]">
-                  ₹15,000 <span className="text-xs md:text-base text-white/90 font-medium ml-2 uppercase tracking-wide">/ Total</span>
+                  ₹15,000 <span className="text-xs md:text-base text-white font-medium ml-2 uppercase tracking-wide">/ Total</span>
                 </div>
                 <p className="text-base md:text-xl text-high-contrast leading-relaxed mb-8">
                   Aiming for a <span className="text-glow-solar font-black">specific profile</span>? We will personally train you on the required skills specifically tailored to <span className="text-glow-cyan font-black">guarantee</span> you clear the position. 
@@ -78,7 +78,7 @@ export default function Recruitment() {
 
                 <div className="w-full p-6 md:p-8 bg-white/5 border border-white/10 rounded-[1.5rem] flex flex-col gap-4 md:gap-6 relative overflow-hidden transition-all duration-500 group-hover:bg-white/[0.08]">
                   <div className="absolute top-0 left-0 w-1 h-full bg-glow-solar shadow-[0_0_15px_rgba(255,69,0,0.6)]"></div>
-                  <h4 className="font-black tracking-[0.2em] text-white/90 uppercase text-xs md:text-sm">Flexible Payment Plans :</h4>
+                  <h4 className="font-black tracking-[0.2em] text-white uppercase text-xs md:text-sm">Flexible Payment Plans :</h4>
                   
                   <div className="flex items-start gap-4">
                     <div className="mt-1.5 w-2 h-2 rounded-full bg-glow-cyan shadow-[0_0_10px_#00f0ff] shrink-0"></div>

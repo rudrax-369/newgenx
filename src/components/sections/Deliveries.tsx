@@ -87,7 +87,7 @@ export default function Deliveries() {
                   <div className={`p-4 rounded-2xl ${bgAccentClass} ${accentClass} border border-white/10 shadow-inner`}>
                     <Globe2 size={28} />
                   </div>
-                  <div className={`text-white/20 group-hover:${accentClass} transition-colors duration-300`}>
+                  <div className={`text-white group-hover:${accentClass} transition-colors duration-300`}>
                     <ExternalLink size={24} />
                   </div>
                 </div>
