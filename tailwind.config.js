@@ -11,6 +11,8 @@ export default {
           purple: '#b026ff',
           blue: '#144cfa',
           cyan: '#00f0ff',
+          solar: '#ff4500',
+          gold: '#ffcc00',
         },
         background: '#040406',
         surface: 'rgba(255, 255, 255, 0.03)',

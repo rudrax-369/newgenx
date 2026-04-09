@@ -8,13 +8,13 @@ export default function About() {
   useEffect(() => {
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray('.about-item');
-      
-      gsap.fromTo(cards, 
+
+      gsap.fromTo(cards,
         { opacity: 0, scale: 0.8, y: 80 },
-        { 
-          opacity: 1, 
+        {
+          opacity: 1,
           scale: 1,
-          y: 0, 
+          y: 0,
           stagger: 0.15,
           duration: 1.2,
           ease: 'back.out(1.7)',
@@ -38,7 +38,7 @@ export default function About() {
       <div className="max-w-6xl w-full relative z-10 glass-card p-8 md:p-16 lg:p-20 border border-white/10 group">
         {/* Ambient Glow inside card */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-glow-solar/5 blur-[100px] rounded-full group-hover:bg-glow-solar/10 transition-colors duration-1000" />
-        
+
         <h2 className="about-item text-4xl md:text-7xl font-black mb-12 text-center text-glow-solar tracking-tighter relative z-10">
           About Me.
         </h2>
@@ -48,7 +48,7 @@ export default function About() {
             I build systems that <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-solar to-glow-gold drop-shadow-[0_0_20px_rgba(255,69,0,0.4)]">automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan to-white drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">Global Tech & Non-Tech talent.</span>
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
           {[
             "⚡ Build AI-powered systems to automate workflows",
