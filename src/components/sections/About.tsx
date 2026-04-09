@@ -36,12 +36,12 @@ export default function About() {
       </div>
 
       <div className="max-w-4xl w-full relative z-10">
-        <h2 className="about-item text-4xl md:text-6xl font-bold mb-12 text-center text-glow">
-          About Me
+        <h2 className="about-item text-4xl md:text-7xl font-black mb-12 text-center text-glow-solar tracking-tighter">
+          About Me.
         </h2>
         <div className="about-item glass-card p-10 md:p-14 mb-10 text-center glow-border">
-          <p className="text-2xl md:text-3xl font-light text-white/90">
-            I build systems that <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan to-glow-purple">automate, scale, and generate revenue,</span> whilst providing comprehensive recruitment placement for both <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-glow-purple to-glow-cyan">Tech and Non-Tech roles.</span>
+          <p className="text-2xl md:text-4xl font-light text-white/90 leading-tight">
+            I build systems that <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-solar to-glow-cyan drop-shadow-[0_0_10px_rgba(255,69,0,0.3)]">automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-gold to-glow-cyan">Global Tech & Non-Tech talent.</span>
           </p>
         </div>
         

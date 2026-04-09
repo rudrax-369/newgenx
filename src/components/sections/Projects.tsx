@@ -41,27 +41,34 @@ export default function Projects() {
       </div>
       
       <div ref={scrollWrapperRef} className="h-full flex flex-col lg:flex-nowrap lg:flex-row items-center justify-center gap-12 lg:gap-0 lg:pt-20 px-6 md:px-24">
-        {projects.map((proj, i) => (
-          <div key={i} className="project-card w-full lg:w-[50vw] h-[50vh] lg:h-[60vh] shrink-0 lg:mr-24 relative group cursor-pointer perspective-[1000px]">
-            <div className="w-full h-full glass-card border-none bg-gradient-to-br from-white/10 to-transparent overflow-hidden relative transition-all duration-700 transform-style-3d lg:group-hover:rotate-y-12 lg:group-hover:scale-[1.05] group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.6)] group-hover:border-glow-cyan/30">
-              {/* Abstract decorative background instead of an image to match the procedural theme */}
-              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-glow-cyan/50 via-background to-background scale-150 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-40 mix-blend-screen" />
-              
-              <div className="absolute inset-0 p-12 flex flex-col justify-between z-10 translate-z-[50px]">
-                <span className="text-6xl font-black text-transparent bg-clip-text bg-white/20 group-hover:bg-glow-cyan/40 transition-all duration-500">
-                  {proj.num}
-                </span>
+        {projects.map((proj, i) => {
+          const isEven = i % 2 === 0;
+          const accentClass = isEven ? 'group-hover:text-glow-cyan' : 'group-hover:text-glow-solar';
+          const bgGlow = isEven ? 'from-glow-cyan/50' : 'from-glow-solar/50';
+          const underlineClass = isEven ? 'bg-glow-cyan' : 'bg-glow-solar';
+
+          return (
+            <div key={i} className="project-card w-full lg:w-[50vw] h-[50vh] lg:h-[60vh] shrink-0 lg:mr-24 relative group cursor-pointer perspective-[1000px]">
+              <div className="w-full h-full glass-card border-none bg-gradient-to-br from-white/10 to-transparent overflow-hidden relative transition-all duration-700 transform-style-3d lg:group-hover:rotate-y-12 lg:group-hover:scale-[1.05] group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.6)]">
+                {/* Abstract decorative background */}
+                <div className={`absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] ${bgGlow} via-background to-background scale-150 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-40 mix-blend-screen`} />
                 
-                <div>
-                  <h3 className="text-4xl md:text-5xl font-bold mb-4 group-hover:text-glow-cyan group-hover:text-shadow-glow transition-all duration-300">
-                    {proj.title}
-                  </h3>
-                  <div className="h-[2px] w-0 bg-glow-cyan group-hover:w-full transition-all duration-700 ease-out shadow-[0_0_15px_#00f0ff]" />
+                <div className="absolute inset-0 p-12 flex flex-col justify-between z-10 translate-z-[50px]">
+                  <span className={`text-6xl font-black text-transparent bg-clip-text bg-white/20 transition-all duration-500 ${isEven ? 'group-hover:bg-glow-cyan/40' : 'group-hover:bg-glow-solar/40'}`}>
+                    {proj.num}
+                  </span>
+                  
+                  <div>
+                    <h3 className={`text-4xl md:text-6xl font-black mb-6 transition-all duration-300 ${accentClass}`}>
+                      {proj.title}
+                    </h3>
+                    <div className={`h-[2px] w-0 ${underlineClass} group-hover:w-full transition-all duration-700 ease-out shadow-[0_0_15px_rgba(0,240,255,0.3)]`} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

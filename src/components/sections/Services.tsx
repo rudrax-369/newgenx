@@ -6,37 +6,37 @@ const services = [
   { 
     title: 'Engineering & Development', 
     icon: Code2, 
-    color: 'group-hover:text-glow-cyan group-hover:shadow-[0_0_20px_#00f0ff]',
+    color: 'group-hover:text-glow-cyan group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]',
     desc: 'Scalable Full Stack Development, robust APIs, database design, and high-performance Web & Mobile applications.'
   },
   { 
     title: 'AI & Automation Systems', 
     icon: Bot, 
-    color: 'group-hover:text-glow-purple group-hover:shadow-[0_0_20px_#b026ff]',
+    color: 'group-hover:text-glow-solar group-hover:shadow-[0_0_20px_rgba(255,69,0,0.3)]',
     desc: 'Integrating AI workflows (LLMs, GPT) and automation pipelines using n8n & Make.com to eliminate manual work.'
   },
   { 
     title: 'Data & Analytics', 
     icon: LineChart, 
-    color: 'group-hover:text-glow-cyan group-hover:shadow-[0_0_20px_#00f0ff]',
+    color: 'group-hover:text-glow-cyan group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]',
     desc: 'Actionable business intelligence, Tableau dashboards, funnel analytics, and data-driven decision making.'
   },
   { 
     title: 'Growth Engineering', 
     icon: TrendingUp, 
-    color: 'group-hover:text-glow-purple group-hover:shadow-[0_0_20px_#b026ff]',
+    color: 'group-hover:text-glow-solar group-hover:shadow-[0_0_20px_rgba(255,69,0,0.3)]',
     desc: 'Lead generation systems, automated outreach pipelines, conversion optimization, and end-to-end growth scaling.'
   },
   { 
     title: 'Tech Talent Sourcing', 
     icon: UserCheck, 
-    color: 'group-hover:text-glow-cyan group-hover:shadow-[0_0_20px_#00f0ff]',
+    color: 'group-hover:text-glow-cyan group-hover:shadow-[0_0_20px_rgba(0,240,255,0.3)]',
     desc: 'Connecting you with pre-vetted, high-quality engineers, developers, and tech specialists perfectly matched to your stack.'
   },
   { 
     title: 'Non-Tech Placements', 
     icon: Users, 
-    color: 'group-hover:text-glow-purple group-hover:shadow-[0_0_20px_#b026ff]',
+    color: 'group-hover:text-glow-solar group-hover:shadow-[0_0_20px_rgba(255,69,0,0.3)]',
     desc: 'Scaling your enterprise with skilled professionals across management, marketing, sales, and core operational roles.'
   },
 ];

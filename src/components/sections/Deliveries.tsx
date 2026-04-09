@@ -54,51 +54,58 @@ export default function Deliveries() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full py-24 md:py-32 px-6 md:px-24">
+    <section ref={containerRef} className="relative w-full py-24 md:py-40 px-6 md:px-24">
       <div className="max-w-7xl mx-auto items-center flex flex-col">
-        <div className="flex flex-col items-center mb-16 md:mb-24 text-center">
-          <h2 className="text-4xl md:text-6xl font-black mb-6 text-glow tracking-tighter">
-            Proven Impact: Successfully Delivered
+        <div className="flex flex-col items-center mb-20 md:mb-32 text-center">
+          <h2 className="text-5xl md:text-8xl font-black mb-8 text-glow tracking-tighter leading-none">
+            Proven Impact.
           </h2>
-          <p className="text-lg md:text-xl text-white/60 font-light max-w-2xl">
+          <p className="text-xl md:text-3xl text-white/50 font-light max-w-3xl leading-relaxed">
             A selection of global platforms and high-performance systems engineering for industry-leading organizations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-          {deliveries.map((item, idx) => (
-            <a 
-              key={idx}
-              href={item.link}
-              target="_blank"
-              rel="noreferrer"
-              className="delivery-card group glass-card p-10 flex flex-col gap-6 pop-hover glow-border relative overflow-hidden"
-            >
-              <div className="flex justify-between items-start relative z-10">
-                <div className="p-3 rounded-lg bg-glow-cyan/10 text-glow-cyan border border-glow-cyan/20">
-                  <Globe2 size={24} />
-                </div>
-                <div className="text-white/40 group-hover:text-glow-cyan transition-colors duration-300">
-                  <ExternalLink size={20} />
-                </div>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 w-full">
+          {deliveries.map((item, idx) => {
+            const isEven = idx % 2 === 0;
+            const accentClass = isEven ? 'text-glow-cyan' : 'text-glow-solar';
+            const bgAccentClass = isEven ? 'bg-glow-cyan/10' : 'bg-glow-solar/10';
+            const borderAccentClass = isEven ? 'border-glow-cyan/20 group-hover:border-glow-cyan/50' : 'border-glow-solar/20 group-hover:border-glow-solar/50';
 
-              <div className="relative z-10">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-glow-cyan/60 font-bold mb-2 block">
-                  {item.type}
-                </span>
-                <h3 className="text-2xl font-bold tracking-tight mb-4 group-hover:text-white transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <p className="text-white/60 text-lg leading-relaxed font-light">
-                  {item.desc}
-                </p>
-              </div>
+            return (
+              <a 
+                key={idx}
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                className={`delivery-card group glass-card p-12 md:p-16 flex flex-col gap-8 pop-hover grow-border relative overflow-hidden ${borderAccentClass}`}
+              >
+                <div className="flex justify-between items-start relative z-10">
+                  <div className={`p-4 rounded-2xl ${bgAccentClass} ${accentClass} border border-white/10 shadow-inner`}>
+                    <Globe2 size={28} />
+                  </div>
+                  <div className={`text-white/20 group-hover:${accentClass} transition-colors duration-300`}>
+                    <ExternalLink size={24} />
+                  </div>
+                </div>
 
-              {/* Decorative background glow */}
-              <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-glow-cyan/5 blur-[80px] rounded-full group-hover:bg-glow-cyan/10 transition-colors duration-500" />
-            </a>
-          ))}
+                <div className="relative z-10">
+                  <span className={`text-[10px] uppercase tracking-[0.4em] font-black mb-4 block opacity-60 ${accentClass}`}>
+                    {item.type}
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-6 group-hover:text-white transition-colors duration-300 leading-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-white/60 text-xl leading-relaxed font-light">
+                    {item.desc}
+                  </p>
+                </div>
+
+                {/* Decorative background glow */}
+                <div className={`absolute -bottom-24 -right-24 w-64 h-64 blur-[100px] rounded-full transition-colors duration-700 ${isEven ? 'bg-glow-cyan/5 group-hover:bg-glow-cyan/10' : 'bg-glow-solar/5 group-hover:bg-glow-solar/10'}`} />
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

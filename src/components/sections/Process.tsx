@@ -72,20 +72,21 @@ export default function Process() {
         </h2>
         
         <div className="relative pl-10 md:pl-20 border-l border-white/10 ml-2 md:ml-0">
-          <div className="process-line absolute top-0 left-0 w-[2px] bg-gradient-to-b from-glow-cyan to-glow-purple origin-top" />
+          <div className="process-line absolute top-0 left-0 w-[2px] bg-gradient-to-b from-glow-cyan via-glow-gold to-glow-solar origin-top" />
           
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-16">
             {experiences.map((exp, i) => (
               <div key={i} className="process-step relative group cursor-default">
                 {/* Timeline Dot */}
-                <div className="absolute w-5 h-5 rounded-full bg-background border-[3px] border-white/30 -left-[49.5px] md:-left-[89.5px] top-10 group-hover:border-glow-cyan group-hover:shadow-[0_0_20px_#00f0ff] transition-all duration-300 z-10" />
+                <div className="absolute w-5 h-5 rounded-full bg-background border-[3px] border-white/30 -left-[49.5px] md:-left-[89.5px] top-12 group-hover:border-glow-cyan group-hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] transition-all duration-300 z-10" />
                 
                 {/* Timeline Content Card */}
-                <div className="glass-card p-8 md:p-12 pop-hover glow-border bg-background/80 hover:bg-background/90 border-white/5">
-                  <div className="text-sm font-black uppercase tracking-[0.2em] text-glow-cyan mb-4 opacity-80">
+                <div className="glass-card p-10 md:p-14 pop-hover glow-border bg-background/80 hover:bg-background/90 border-white/5">
+                  <div className="text-xs font-black uppercase tracking-[0.3em] text-glow-cyan mb-6 opacity-80 flex items-center gap-4">
+                    <span className="h-px w-12 bg-glow-cyan/50" />
                     {exp.num}
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold tracking-wide mb-4 text-white group-hover:text-glow-purple transition-colors duration-300">
+                  <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-6 text-white group-hover:text-glow-solar transition-colors duration-300">
                     {exp.title}
                   </h3>
                   <p className="text-white/80 text-xl font-light leading-relaxed max-w-3xl">

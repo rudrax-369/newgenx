@@ -73,20 +73,24 @@ export default function Navbar() {
         isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-[-20px]'
       }`}>
         <div className="h-full flex flex-col items-center justify-center gap-8 px-6">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-4xl font-black uppercase tracking-[0.2em] text-white/40 hover:text-glow-cyan hover:scale-110 transition-all duration-300"
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link, idx) => {
+            const isEven = idx % 2 === 0;
+            const accentClass = isEven ? 'hover:text-glow-cyan' : 'hover:text-glow-solar';
+            return (
+              <a 
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={`text-4xl font-black uppercase tracking-[0.2em] text-white/40 hover:scale-110 transition-all duration-300 ${accentClass}`}
+              >
+                {link.name}
+              </a>
+            );
+          })}
           <a 
             href="#contact"
             onClick={() => setIsOpen(false)}
-            className="mt-8 px-10 py-4 border border-glow-cyan/50 rounded-full text-sm uppercase tracking-widest text-glow-cyan hover:bg-glow-cyan hover:text-background transition-all duration-500"
+            className="mt-8 px-10 py-4 border border-glow-solar/50 rounded-full text-sm uppercase tracking-widest text-glow-solar hover:bg-glow-solar hover:text-background transition-all duration-500 shadow-[0_0_20px_rgba(255,69,0,0.2)]"
           >
             Get in touch
           </a>

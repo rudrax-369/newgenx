@@ -2,30 +2,70 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function Contact() {
   return (
-    <section className="relative w-full min-h-screen py-32 px-6 md:px-24 flex items-center justify-center">
-      <div className="w-full max-w-4xl flex flex-col items-center glass-card p-10 md:p-20 relative overflow-hidden group text-center pop-hover glow-border">
+    <section className="relative w-full py-32 px-6 md:px-24 mb-20">
+      <div className="max-w-4xl mx-auto items-start flex flex-col">
+        <h2 className="text-5xl md:text-8xl font-black mb-12 tracking-tighter text-glow-solar leading-none">
+          Let's Scale <br />
+          <span className="text-glow underline decoration-glow-cyan/30 underline-offset-8">Together</span>.
+        </h2>
         
-        <div className="absolute top-0 right-0 w-64 h-64 bg-glow-purple/20 blur-[100px] rounded-full mix-blend-screen pointer-events-none transition-transform duration-1000 group-hover:translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-glow-cyan/20 blur-[100px] rounded-full mix-blend-screen pointer-events-none transition-transform duration-1000 group-hover:-translate-x-1/4" />
+        <p className="text-xl md:text-3xl text-white/60 font-light max-w-2xl mb-16 leading-relaxed">
+          Whether you're looking to build a <span className="text-white font-bold">new product</span>, optimize your <span className="text-white font-bold">growth funnel</span>, or scale your <span className="text-white font-bold">engineering team</span>—I'm ready to help you hit the next peak.
+        </p>
 
-        <div className="relative z-10 text-center mb-10">
-          <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-glow">
-            Let’s Connect & Build Something Powerful
-          </h2>
-          <p className="text-white/70 text-lg md:text-xl font-light">
-            Whether you're starting from scratch or scaling fast — <br className="hidden md:block"/>I can help you build, optimize, and grow. Reach out directly!
-          </p>
-        </div>
+        <div className="flex flex-wrap gap-6 w-full">
+          <a 
+            href="https://wa.me/917521876543" 
+            target="_blank" 
+            rel="noreferrer"
+            className="flex-1 min-w-[280px] px-10 py-6 glass-card pop-hover flex items-center justify-between group border-glow-cyan/20 hover:border-glow-cyan/50 shadow-[0_0_30px_rgba(0,240,255,0.1)]"
+          >
+            <div className="flex items-center gap-6">
+              <div className="p-4 rounded-xl bg-glow-cyan/10 text-glow-cyan group-hover:scale-110 transition-transform">
+                <MessageSquare size={28} />
+              </div>
+              <div>
+                <span className="block text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Direct Chat</span>
+                <span className="text-xl font-bold tracking-tight">WhatsApp</span>
+              </div>
+            </div>
+            <ArrowUpRight className="text-white/20 group-hover:text-glow-cyan transition-colors" />
+          </a>
 
-        <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mt-8 w-full justify-center px-4 sm:px-0">
-          <a href="https://wa.me/917303686363" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 px-4 py-4 bg-white text-background font-bold uppercase tracking-widest text-[10px] md:text-xs rounded-lg hover:bg-glow-cyan hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] transition-all duration-300">
-            WhatsApp <ArrowUpRight size={14} />
+          <a 
+            href="https://www.linkedin.com/in/rudrax-singh-951978253" 
+            target="_blank" 
+            rel="noreferrer"
+            className="flex-1 min-w-[280px] px-10 py-6 glass-card pop-hover flex items-center justify-between group border-glow-solar/20 hover:border-glow-solar/50 shadow-[0_0_30px_rgba(255,69,0,0.1)]"
+          >
+            <div className="flex items-center gap-6">
+              <div className="p-4 rounded-xl bg-glow-solar/10 text-glow-solar group-hover:scale-110 transition-transform">
+                <Linkedin size={28} />
+              </div>
+              <div>
+                <span className="block text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Professional</span>
+                <span className="text-xl font-bold tracking-tight">LinkedIn</span>
+              </div>
+            </div>
+            <ArrowUpRight className="text-white/20 group-hover:text-glow-solar transition-colors" />
           </a>
-          <a href="https://www.instagram.com/rudrax__singh/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 px-4 py-4 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-[10px] md:text-xs rounded-lg hover:border-glow-cyan hover:bg-glow-cyan/10 hover:shadow-[0_0_30px_rgba(0,240,255,0.2)] transition-all duration-300">
-            Instagram <ArrowUpRight size={14} />
-          </a>
-          <a href="https://www.linkedin.com/in/rudrax-chhonkar" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-3 px-4 py-4 bg-transparent border border-white/20 text-white font-bold uppercase tracking-widest text-[10px] md:text-xs rounded-lg hover:border-glow-purple hover:bg-glow-purple/10 hover:shadow-[0_0_30px_rgba(176,38,255,0.2)] transition-all duration-300">
-            LinkedIn <ArrowUpRight size={14} />
+
+          <a 
+            href="https://www.instagram.com/rudrax__singh/" 
+            target="_blank" 
+            rel="noreferrer"
+            className="flex-1 min-w-[280px] px-10 py-6 glass-card pop-hover flex items-center justify-between group border-white/5 hover:border-white/20"
+          >
+            <div className="flex items-center gap-6">
+              <div className="p-4 rounded-xl bg-white/5 text-white/60 group-hover:scale-110 group-hover:text-white transition-all">
+                <Instagram size={28} />
+              </div>
+              <div>
+                <span className="block text-[10px] uppercase tracking-[0.3em] text-white/40 mb-1">Visual Log</span>
+                <span className="text-xl font-bold tracking-tight">Instagram</span>
+              </div>
+            </div>
+            <ArrowUpRight className="text-white/20 group-hover:text-white transition-colors" />
           </a>
         </div>
       </div>

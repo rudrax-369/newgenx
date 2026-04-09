@@ -25,14 +25,26 @@ export default function Hero() {
         <OrbitalRings />
       </div>
 
-      <div className="hero-text z-10 flex flex-col items-start mt-20 md:mt-32 pointer-events-auto max-w-4xl glass-card p-6 md:p-16 relative text-left mx-4 md:mx-0">
-        <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-6 text-glow leading-tight">
-          I Build Scalable <br className="hidden md:block"/>
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan to-glow-purple">Tech + Growth + Recruitment Systems</span>
+      <div className="hero-text z-10 flex flex-col items-start mt-20 md:mt-32 pointer-events-auto max-w-4xl glass-card p-8 md:p-20 relative text-left mx-4 md:mx-0">
+        <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 transition-all duration-700 hover:tracking-tight">
+          <span className="text-glow block mb-2">Build. Develop.</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan via-white to-glow-solar drop-shadow-[0_0_30px_rgba(0,240,255,0.3)]">
+            Scale Fast.
+          </span>
         </h1>
-        <p className="text-lg md:text-2xl text-white/70 font-light max-w-3xl">
-          Full Stack Developer, Data Strategist, and Growth Engineer helping startups and businesses transform ideas into powerful digital products and revenue-generating systems.
+        <p className="text-xl md:text-3xl text-white/80 font-light max-w-3xl leading-snug mb-10">
+          Founder of NewGenX. Engineering <span className="text-glow-solar font-bold">Growth Systems</span> & <span className="text-glow-cyan font-bold">Tech Products</span> for the global market.
         </p>
+        <div className="flex gap-6">
+          <div className="h-px w-24 bg-gradient-to-r from-glow-cyan to-transparent self-center opacity-50" />
+          <span className="text-[10px] uppercase tracking-[0.5em] text-white/40 font-bold">Available for Global Projects</span>
+        </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40 animate-bounce">
+        <div className="w-[1px] h-12 bg-gradient-to-b from-glow-cyan to-transparent" />
+        <span className="text-[10px] uppercase tracking-[0.4em] text-white rotate-90">Scroll</span>
       </div>
     </section>
   );
