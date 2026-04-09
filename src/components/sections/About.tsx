@@ -43,11 +43,7 @@ export default function About() {
           About Me.
         </h2>
 
-        <div className="about-item mb-12 text-center relative z-10">
-          <p className="text-[clamp(1.5rem,4vw,3.5rem)] text-high-contrast leading-[1.3] md:leading-[1.2] tracking-tight">
-            I build systems that <span className="font-black" style={{color: '#ff4500', textShadow: '0 0 20px rgba(255,69,0,0.4), 0 0 40px rgba(255,204,0,0.2)'}}>automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black" style={{color: '#00f0ff', textShadow: '0 0 20px rgba(0,240,255,0.4), 0 0 40px rgba(0,240,255,0.2)'}}>Global Tech & Non-Tech talent.</span>
-          </p>
-        </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
           {[
