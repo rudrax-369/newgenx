@@ -18,7 +18,7 @@ export default function Contact() {
 
         <div className="flex flex-wrap gap-6 w-full relative z-10">
           <a 
-            href="https://wa.me/917521876543" 
+            href="https://wa.me/917303686363" 
             target="_blank" 
             rel="noreferrer"
             className="flex-1 min-w-[280px] px-8 py-8 bg-white/[0.03] rounded-3xl pop-hover flex items-center justify-between group/link border border-white/5 hover:border-glow-cyan/30 shadow-inner"
@@ -36,7 +36,7 @@ export default function Contact() {
           </a>
 
           <a 
-            href="https://www.linkedin.com/in/rudrax-singh-951978253" 
+            href="https://www.linkedin.com/in/rudrax-chhonkar" 
             target="_blank" 
             rel="noreferrer"
             className="flex-1 min-w-[280px] px-8 py-8 bg-white/[0.03] rounded-3xl pop-hover flex items-center justify-between group/link border border-white/5 hover:border-glow-solar/30 shadow-inner"
