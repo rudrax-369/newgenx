@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, MessageSquare, Linkedin, Instagram } from 'lucide-react';
 
 export default function Contact() {
   return (
