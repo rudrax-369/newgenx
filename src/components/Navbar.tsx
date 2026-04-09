@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +13,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   const navLinks = [
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
@@ -19,38 +30,68 @@ export default function Navbar() {
   ];
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
-        isScrolled 
-          ? 'py-4 bg-background/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' 
-          : 'py-8 bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center text-white">
-        <a href="#" className="flex items-center gap-2 group">
-          <span className="text-xl md:text-2xl font-black uppercase tracking-[0.3em] transition-all duration-300 group-hover:tracking-[0.4em]">
-            NewGen<span className="text-glow-cyan">X</span>
-          </span>
-        </a>
+    <>
+      <nav 
+        className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${
+          isScrolled || isOpen
+            ? 'py-4 bg-background/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' 
+            : 'py-8 bg-transparent'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center text-white">
+          <a href="#" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
+            <span className="text-xl md:text-2xl font-black uppercase tracking-[0.3em] transition-all duration-300 group-hover:tracking-[0.4em]">
+              NewGen<span className="text-glow-cyan">X</span>
+            </span>
+          </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-10">
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name}
+                href={link.href}
+                className="text-xs uppercase tracking-[0.2em] font-medium text-white/50 hover:text-glow-cyan transition-colors duration-300"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Toggle */}
+          <button 
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 text-white/70 hover:text-glow-cyan transition-colors"
+          >
+            {isOpen ? <X size={32} /> : <Menu size={32} />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`fixed inset-0 z-[90] bg-background/95 backdrop-blur-2xl transition-all duration-500 md:hidden ${
+        isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none translate-y-[-20px]'
+      }`}>
+        <div className="h-full flex flex-col items-center justify-center gap-8 px-6">
           {navLinks.map((link) => (
             <a 
               key={link.name}
               href={link.href}
-              className="text-xs uppercase tracking-[0.2em] font-medium text-white/50 hover:text-glow-cyan transition-colors duration-300"
+              onClick={() => setIsOpen(false)}
+              className="text-4xl font-black uppercase tracking-[0.2em] text-white/40 hover:text-glow-cyan hover:scale-110 transition-all duration-300"
             >
               {link.name}
             </a>
           ))}
-        </div>
-
-        {/* Mobile Toggle (Simple) */}
-        <div className="md:hidden flex items-center">
-          <div className="w-6 h-1 bg-white opacity-50 rounded-full relative after:absolute after:top-2 after:left-0 after:w-4 after:h-full after:bg-white after:rounded-full before:absolute before:-top-2 before:left-0 before:w-8 before:h-full before:bg-white before:rounded-full"></div>
+          <a 
+            href="#contact"
+            onClick={() => setIsOpen(false)}
+            className="mt-8 px-10 py-4 border border-glow-cyan/50 rounded-full text-sm uppercase tracking-widest text-glow-cyan hover:bg-glow-cyan hover:text-background transition-all duration-500"
+          >
+            Get in touch
+          </a>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
