@@ -44,8 +44,7 @@
   */
   .glass-card {
     @apply bg-background/50 bg-gradient-to-br from-white/[0.12] to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_8px_48px_0_rgba(0,0,0,0.9)] transition-[transform,box-shadow,border-color] duration-500 will-change-transform relative overflow-visible;
-    transform: translateZ(0);
-    isolation: isolate;
+    /* Removed translateZ and isolate to prevent text clipping on composite layers */
   }
 
   /* Reduce blur on mobile — backdrop-filter is the #1 GPU killer on mobile */

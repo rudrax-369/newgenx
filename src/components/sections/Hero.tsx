@@ -29,8 +29,8 @@ export default function Hero() {
         {/* Ambient Glow inside card */}
         <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-glow-cyan/5 blur-[80px] md:blur-[100px] rounded-full group-hover:bg-glow-cyan/10 transition-colors duration-1000 pointer-events-none" />
 
-        <h1 className="text-[clamp(2.2rem,8vw,7.5rem)] leading-[1.1] font-black tracking-tighter mb-8 transition-all duration-700 hover:tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative z-10 break-words w-full">
-          <span className="text-glow block mb-2">Build. Develop. Scale Fast.</span>
+        <h1 className="text-[clamp(2.2rem,8vw,7.5rem)] leading-[1.2] font-black tracking-tighter mb-8 transition-all duration-700 hover:tracking-tight drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative z-10 break-words flex flex-wrap w-full py-2">
+          <span className="text-glow block mb-2 w-full">Build. Develop. Scale Fast.</span>
         </h1>
         <p className="text-lg md:text-3xl lg:text-4xl text-high-contrast max-w-3xl leading-relaxed mb-10 relative z-10">
           Founder of NewGenX. Engineering <span className="text-glow-solar font-black">Growth Systems</span> & <span className="text-glow-cyan font-black">Tech Products</span> for the global market.
