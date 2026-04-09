@@ -71,7 +71,7 @@ export default function Services() {
         {/* Ambient Glow inside card */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-glow-cyan/5 blur-[100px] rounded-full group-hover:bg-glow-cyan/10 transition-colors duration-1000 pointer-events-none" />
         
-        <h2 className="text-4xl md:text-7xl font-black mb-16 text-center tracking-tighter text-glow relative z-10">
+        <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-black mb-16 text-center tracking-tighter text-glow relative z-10 leading-none">
           Skills & Expertise
         </h2>
         

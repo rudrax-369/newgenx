@@ -107,23 +107,22 @@ export default function Scene() {
   return (
     <Canvas
       camera={{ position: [0, 0, 5], fov: 45 }}
-      dpr={isMobile ? 1 : [1, 1.2]}  // Limit DPR on mobile
+      dpr={isMobile ? 1 : [1, 1.5]}  // Cap DPR for stability
       gl={{ 
-        antialias: false, 
+        antialias: isMobile ? false : true, 
         alpha: true, 
         powerPreference: 'high-performance',
         stencil: false,
-        depth: false
+        depth: true
       }}
     >
       <Suspense fallback={null}>
-        <ambientLight intensity={0.4} />
-        <pointLight position={[0, 0, 0]} intensity={3} color="#ff4500" />
-        <directionalLight position={[5, 5, 5]} intensity={2} color="#ff0000" />
-        <directionalLight position={[-5, -5, -5]} intensity={1} color="#4b0000" />
+        <ambientLight intensity={0.5} />
+        <pointLight position={[0, 0, 0]} intensity={2.5} color="#ff4500" />
+        <directionalLight position={[5, 5, 5]} intensity={1.5} color="#ff0000" />
         
         <RedSun />
-        <ParticleSystem count={isMobile ? 150 : 1200} />
+        <ParticleSystem count={isMobile ? 100 : 1000} />
       </Suspense>
       {!isMobile && <Environment preset="night" />}
       <Preload all />

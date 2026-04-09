@@ -70,7 +70,7 @@ export default function Process() {
         {/* Ambient Glow inside card */}
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-glow-gold/10 blur-[100px] rounded-full group-hover:bg-glow-gold/20 transition-colors duration-1000 pointer-events-none" />
         
-        <h2 className="text-4xl md:text-7xl font-black mb-20 tracking-tighter text-glow text-center md:text-left relative z-10">
+        <h2 className="text-[clamp(2.5rem,6vw,5.5rem)] font-black mb-16 md:mb-20 tracking-tighter text-glow text-center md:text-left relative z-10 leading-none">
           Projects & Work
         </h2>
         

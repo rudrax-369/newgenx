@@ -52,7 +52,7 @@ function App() {
 
         {/* Scrollable Content */}
         <ReactLenis root options={LENIS_OPTIONS}>
-          <main className="relative z-10 w-full overflow-hidden">
+          <main className="relative z-10 w-full overflow-x-hidden overflow-y-visible">
             <Hero />
             <div id="about"><About /></div>
             <div id="services"><Services /></div>

@@ -34,10 +34,10 @@ export default function Recruitment() {
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-glow-solar/10 blur-[150px] rounded-full pointer-events-none" />
           
           <div className="text-center mb-10 md:mb-16 relative z-10 w-full">
-            <h2 className="text-5xl md:text-8xl font-black mb-6 text-glow tracking-tighter shadow-glow-cyan">
+            <h2 className="text-[clamp(2.5rem,8vw,7.5rem)] font-black mb-6 text-glow tracking-tighter leading-none">
               We're Hiring.
             </h2>
-            <p className="text-lg md:text-3xl text-white font-light max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-3xl lg:text-4xl text-white font-light max-w-4xl mx-auto leading-relaxed">
               Recruitment & Profile Training perfectly tailored to your ambitions.
             </p>
           </div>

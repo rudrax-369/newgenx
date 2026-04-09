@@ -35,17 +35,17 @@ export default function About() {
         <AbstractNodes />
       </div>
 
-      <div className="max-w-6xl w-full relative z-10 glass-card p-8 md:p-16 lg:p-20 border border-white/10 group">
+      <div className="max-w-6xl w-full relative z-10 glass-card p-6 md:p-16 lg:p-20 border border-white/10 group">
         {/* Ambient Glow inside card */}
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-glow-solar/5 blur-[100px] rounded-full group-hover:bg-glow-solar/10 transition-colors duration-1000" />
+        <div className="absolute -top-24 -right-24 w-64 h-64 md:w-96 md:h-96 bg-glow-solar/5 blur-[80px] md:blur-[100px] rounded-full group-hover:bg-glow-solar/10 transition-colors duration-1000" />
 
-        <h2 className="about-item text-4xl md:text-7xl font-black mb-12 text-center text-glow-solar tracking-tighter relative z-10">
+        <h2 className="about-item text-[clamp(2rem,6vw,5.5rem)] font-black mb-10 text-center text-glow-solar tracking-tighter relative z-10">
           About Me.
         </h2>
 
-        <div className="about-item mb-16 text-center relative z-10">
-          <p className="text-2xl md:text-5xl text-high-contrast leading-[1.1] tracking-tight">
-            I build systems that <span className="font-black" style={{color: '#ff4500', textShadow: '0 0 20px rgba(255,69,0,0.6), 0 0 40px rgba(255,204,0,0.3)'}}>automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black" style={{color: '#00f0ff', textShadow: '0 0 20px rgba(0,240,255,0.6), 0 0 40px rgba(0,240,255,0.3)'}}>Global Tech & Non-Tech talent.</span>
+        <div className="about-item mb-12 text-center relative z-10">
+          <p className="text-[clamp(1.5rem,4vw,3.5rem)] text-high-contrast leading-[1.3] md:leading-[1.2] tracking-tight">
+            I build systems that <span className="font-black" style={{color: '#ff4500', textShadow: '0 0 20px rgba(255,69,0,0.4), 0 0 40px rgba(255,204,0,0.2)'}}>automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black" style={{color: '#00f0ff', textShadow: '0 0 20px rgba(0,240,255,0.4), 0 0 40px rgba(0,240,255,0.2)'}}>Global Tech & Non-Tech talent.</span>
           </p>
         </div>
 
@@ -58,8 +58,8 @@ export default function About() {
             "🚀 Develop scalable web & mobile applications",
             "🎓 Paid mentorship programs to train candidates for targeted roles"
           ].map((item, idx) => (
-            <div key={idx} className="about-item bg-white/[0.03] border border-white/5 px-6 py-6 flex items-center pop-hover glow-border rounded-[1.5rem] transition-all duration-300">
-              <p className="text-white text-lg md:text-xl font-dark">{item}</p>
+            <div key={idx} className="about-item bg-white/[0.03] border border-white/5 px-4 md:px-6 py-5 md:py-6 flex items-center pop-hover glow-border rounded-[1.5rem] transition-all duration-300">
+              <p className="text-white text-base md:text-xl font-medium">{item}</p>
             </div>
           ))}
         </div>

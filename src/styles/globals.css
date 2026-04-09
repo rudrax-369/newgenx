@@ -10,13 +10,16 @@
   }
 
   /* Fluid Typography — scales smoothly across all viewports */
-  h1 { font-size: clamp(2.5rem, 7vw, 6rem); }
-  h2 { font-size: clamp(2rem, 5vw, 5rem); }
-  p  { font-size: clamp(0.95rem, 2vw, 1.25rem); }
+  h1 { font-size: clamp(2.5rem, 8vw, 7.5rem); }
+  h2 { font-size: clamp(2rem, 6vw, 5.5rem); }
+  p  { font-size: clamp(1rem, 2.5vw, 1.4rem); }
 
   body {
     @apply bg-background text-white overscroll-none antialiased font-sans;
     letter-spacing: -0.015em;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     /* Prevent layout flicker from touch momentum scroll */
     -webkit-overflow-scrolling: touch;
   }
@@ -40,7 +43,7 @@
     - will-change: transform tells the browser to pre-promote this layer 
   */
   .glass-card {
-    @apply bg-background/50 bg-gradient-to-br from-white/[0.12] to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_8px_48px_0_rgba(0,0,0,0.9)] transition-[transform,box-shadow,border-color] duration-500 will-change-transform relative overflow-hidden;
+    @apply bg-background/50 bg-gradient-to-br from-white/[0.12] to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl shadow-[0_8px_48px_0_rgba(0,0,0,0.9)] transition-[transform,box-shadow,border-color] duration-500 will-change-transform relative overflow-visible;
     transform: translateZ(0);
     isolation: isolate;
   }
