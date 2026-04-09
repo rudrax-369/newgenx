@@ -38,9 +38,9 @@ export default function ParticleSystem({ count = 1000 }: { count?: number }) {
       </bufferGeometry>
       <pointsMaterial
         size={0.03}
-        color="#00f0ff"
+        color="#ff4500"
         transparent
-        opacity={0.6}
+        opacity={0.4}
         sizeAttenuation
         blending={THREE.AdditiveBlending}
       />
