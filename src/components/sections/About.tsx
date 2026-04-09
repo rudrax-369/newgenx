@@ -29,23 +29,27 @@ export default function About() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full min-h-screen py-32 px-6 flex flex-col items-center justify-center relative overflow-hidden">
+    <section ref={containerRef} className="relative w-full min-h-screen py-20 lg:py-32 px-6 flex flex-col items-center justify-center overflow-hidden">
       <TechGrid />
       <div className="absolute left-0 bottom-10 w-[400px] h-[400px] pointer-events-none opacity-30 mix-blend-screen">
         <AbstractNodes />
       </div>
 
-      <div className="max-w-4xl w-full relative z-10">
-        <h2 className="about-item text-4xl md:text-7xl font-black mb-12 text-center text-glow-solar tracking-tighter">
+      <div className="max-w-6xl w-full relative z-10 glass-card p-8 md:p-16 lg:p-20 border border-white/10 group">
+        {/* Ambient Glow inside card */}
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-glow-solar/5 blur-[100px] rounded-full group-hover:bg-glow-solar/10 transition-colors duration-1000" />
+        
+        <h2 className="about-item text-4xl md:text-7xl font-black mb-12 text-center text-glow-solar tracking-tighter relative z-10">
           About Me.
         </h2>
-        <div className="about-item glass-card p-10 md:p-14 mb-10 text-center glow-border">
+
+        <div className="about-item mb-16 text-center relative z-10">
           <p className="text-2xl md:text-5xl text-high-contrast leading-[1.1] tracking-tight">
             I build systems that <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-solar to-glow-gold drop-shadow-[0_0_20px_rgba(255,69,0,0.4)]">automate, scale, and generate revenue,</span> whilst providing recruitment for <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-glow-cyan to-white drop-shadow-[0_0_20px_rgba(0,240,255,0.4)]">Global Tech & Non-Tech talent.</span>
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
           {[
             "⚡ Build AI-powered systems to automate workflows",
             "💻 Source elite developers and engineers for specialized Tech roles",
@@ -54,7 +58,7 @@ export default function About() {
             "🚀 Develop scalable web & mobile applications",
             "🎓 Paid mentorship programs to train candidates for targeted roles"
           ].map((item, idx) => (
-            <div key={idx} className="about-item glass-card px-6 py-5 flex items-center pop-hover glow-border">
+            <div key={idx} className="about-item bg-white/[0.03] border border-white/5 px-6 py-6 flex items-center pop-hover glow-border rounded-[1.5rem] transition-all duration-300">
               <p className="text-white/80 text-lg md:text-xl font-light">{item}</p>
             </div>
           ))}

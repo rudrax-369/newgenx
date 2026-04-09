@@ -54,9 +54,12 @@ export default function Deliveries() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative w-full py-24 md:py-40 px-6 md:px-24">
-      <div className="max-w-7xl mx-auto items-center flex flex-col">
-        <div className="flex flex-col items-center mb-20 md:mb-32 text-center">
+    <section ref={containerRef} className="relative w-full py-20 lg:py-32 px-6 md:px-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full glass-card p-8 md:p-16 lg:p-20 border border-white/10 relative group">
+        {/* Ambient Glow inside card */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-glow-cyan/5 blur-[120px] rounded-full group-hover:bg-glow-cyan/10 transition-colors duration-1000 pointer-events-none" />
+        
+        <div className="flex flex-col items-center mb-20 text-center relative z-10">
           <h2 className="text-5xl md:text-8xl font-black mb-8 text-glow tracking-tighter leading-none">
             Proven Impact.
           </h2>
@@ -65,12 +68,12 @@ export default function Deliveries() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full relative z-10">
           {deliveries.map((item, idx) => {
             const isEven = idx % 2 === 0;
             const accentClass = isEven ? 'text-glow-cyan' : 'text-glow-solar';
             const bgAccentClass = isEven ? 'bg-glow-cyan/10' : 'bg-glow-solar/10';
-            const borderAccentClass = isEven ? 'border-glow-cyan/20 group-hover:border-glow-cyan/50' : 'border-glow-solar/20 group-hover:border-glow-solar/50';
+            const borderAccentClass = isEven ? 'border-white/5 group-hover:border-glow-cyan/30' : 'border-white/5 group-hover:border-glow-solar/30';
 
             return (
               <a 
@@ -78,7 +81,7 @@ export default function Deliveries() {
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
-                className={`delivery-card group glass-card p-12 md:p-16 flex flex-col gap-8 pop-hover grow-border relative overflow-hidden ${borderAccentClass}`}
+                className={`delivery-card group bg-white/[0.03] p-10 md:p-12 flex flex-col gap-8 pop-hover grow-border relative overflow-hidden rounded-[2rem] border ${borderAccentClass}`}
               >
                 <div className="flex justify-between items-start relative z-10">
                   <div className={`p-4 rounded-2xl ${bgAccentClass} ${accentClass} border border-white/10 shadow-inner`}>
@@ -96,7 +99,7 @@ export default function Deliveries() {
                   <h3 className="text-3xl md:text-4xl font-black tracking-tight mb-6 group-hover:text-white transition-colors duration-300 leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-white/60 text-xl leading-relaxed font-light">
+                  <p className="text-white/60 text-lg md:text-xl leading-relaxed font-light">
                     {item.desc}
                   </p>
                 </div>
