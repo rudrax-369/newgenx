@@ -33,7 +33,7 @@ export default function Hero() {
           <span className="text-glow block mb-2 w-full">Build. Develop. Scale Fast.</span>
         </h1>
         <p className="text-lg md:text-3xl lg:text-4xl text-high-contrast max-w-3xl leading-relaxed mb-10 relative z-10">
-          Founder of NewGenX. Engineering <span className="text-glow-solar font-black">Growth Systems</span> & <span className="text-glow-cyan font-black">Tech Products</span> for the global market.
+          Founder of NewGenX. Architecting high-impact <span className="text-glow-solar font-black">Growth Systems</span> & cutting-edge <span className="text-glow-cyan font-black">Tech Products</span> for the global market.
         </p>
         <div className="flex gap-4 md:gap-6 relative z-10">
           <div className="h-px w-12 md:w-24 bg-gradient-to-r from-glow-cyan to-transparent self-center opacity-50" />
